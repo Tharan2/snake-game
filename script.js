@@ -105,16 +105,16 @@ function arraycheck(){
   for(let i=0;i<boxarray.length;i++){
     for(let j=0;j<boxarray[i].length;j++){
       if(boxarray[i][j]===0){
-        document.getElementById(String(i)).getElementsByClassName(String(j))[0].style.backgroundColor = "black";
+        document.getElementById(String(i)).getElementsByClassName(String(j))[0].style.backgroundColor = "rgb(204, 255, 204)";
+        if((i+1)%2==0 && (j+1)%2==0 || (i+1)%2==1 && (j+1)%2==1){
+          document.getElementById(String(i)).getElementsByClassName(String(j))[0].style.backgroundColor = "rgb(153, 230, 153)";
+        }
       }
       else if(boxarray[i][j]===1){
         document.getElementById(String(i)).getElementsByClassName(String(j))[0].style.backgroundColor = "green";
       }
       else if(boxarray[i][j]===2){
         document.getElementById(String(i)).getElementsByClassName(String(j))[0].style.backgroundColor = "red";
-      }
-      else if(boxarray[i][j]===3){
-
       }
     }
   }
