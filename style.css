@@ -73,7 +73,7 @@ body{
 .mainbox{
 
   margin: auto;
-  width: 520px;
+  width: 501px;
   height: auto;
   background-color: rgb(255, 0, 0);
   padding: 5px;
@@ -90,7 +90,6 @@ body{
   
 }
 .innerbox{
-  border:  solid 1px rgb(45, 43, 43);
   background-color: black;
   width: 20px;
   height: 20px;
