@@ -14,13 +14,13 @@ function box() {
   let boxhtml;
  
   let boxindex = [0];
-  for (let i = 1; i < 50; i++) {
+  for (let i = 1; i < 25; i++) {
     boxdiv += `<div class="innerbox ${i}"></div>`;
     boxindex[i]=0;
   }
   boxhtml = `<div class="outerbox" id="0">${boxdiv}</div>`;
   boxarray.push(boxindex.slice());
-  for (let i = 1; i < 50; i++) {
+  for (let i = 1; i < 25; i++) {
     boxhtml += `<div class="outerbox" id="${i}">${boxdiv}</div>`;
     boxarray.push(boxindex.slice());
   }console.log(document.querySelector(".mainbox").innerHTML);
@@ -29,7 +29,7 @@ function box() {
   snake(snakePositioni,snakePositionj);
   arraycheck(boxarray);
   
-  const snakeMoving = setInterval(()=>snakemove(snakeMoving), 100);
+  const snakeMoving = setInterval(()=>snakemove(snakeMoving), 200);
   
   document.addEventListener('keydown', function(event) {
     if(event.key==="ArrowUp"&& keypressed!=2){
@@ -46,10 +46,14 @@ function box() {
     }
   });
   document.querySelector('.restart-button').addEventListener('click',()=>{location.reload()});
+  document.addEventListener('keydown',function(event){
+    document.querySelector(".tutorial").style.display="none"});
+  document.addEventListener('mousedown', function(event){
+      document.querySelector(".tutorial").style.display="none"});
 }
 
 function snakemove(snakeMoving){
-  if(snakePositioni>=0 && snakePositioni<50 && snakePositionj>=0 && snakePositionj<50){
+  if(snakePositioni>=0 && snakePositioni<25 && snakePositionj>=0 && snakePositionj<25){
     if(keypressed == 1){ 
       snakePositioni--;
       snakepositioncheck(snakePositioni, snakePositionj,snakeMoving);
@@ -117,8 +121,8 @@ function arraycheck(){
 }
 
 function randomFood(){
-  foodi = Math.floor(Math.random()*50);
-  foodj = Math.floor(Math.random()*50);
+  foodi = Math.floor(Math.random()*25);
+  foodj = Math.floor(Math.random()*25);
   if(boxarray[foodi][foodj] === 1){
     randomFood(boxarray);
   }
@@ -153,5 +157,11 @@ function restart(snakeMoving){
 function gameover(){
   const dis = document.querySelector('.gameOver');
   dis.style.display='flex';
+}
+function tutorial(){
+  document.querySelector(".tutorial").addEventListener('click',function(event){
+  document.querySelector(".tutorial").style.display="none";
+
+  })
 }
 box();
