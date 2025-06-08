@@ -44,7 +44,9 @@ function box() {
     else if(event.key==="ArrowRight"&& keypressed!=3){
       keypressed=4;
     }
+    console.log(boxarray);
   });
+  
   document.querySelector('.restart-button').addEventListener('click',()=>{location.reload()});
   document.addEventListener('keydown',function(event){
     document.querySelector(".tutorial").style.display="none"});
@@ -112,9 +114,18 @@ function arraycheck(){
       }
       else if(boxarray[i][j]===1){
         document.getElementById(String(i)).getElementsByClassName(String(j))[0].style.backgroundColor = "green";
+        // let snakehead = snakeBody[((snakeBody.length+1)-(snakeBody.length))-1];
+        // const head = document.getElementById(String(snakehead[0])).getElementsByClassName(String(snakehead[1]))[0];
+        //   head.style.backgroundColor = "blue";
+        // let snaketail = snakeBody[snakeBody.length-1];
+        // const tail = document.getElementById(String(snaketail[0])).getElementsByClassName(String(snaketail[1]))[0];
+        //   tail.style.backgroundColor = "rgb(41, 235, 24)";
+        
       }
       else if(boxarray[i][j]===2){
-        document.getElementById(String(i)).getElementsByClassName(String(j))[0].style.backgroundColor = "red";
+        let food = document.getElementById(String(i)).getElementsByClassName(String(j))[0];
+        food.style.backgroundColor = "red";
+          
       }
     }
   }

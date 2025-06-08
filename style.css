@@ -83,7 +83,6 @@ body{
   display: flex ;
   align-items: center;
   margin: 0;
-  margin: 0;
 }
 .outerbox{
   display: flex;
@@ -93,6 +92,7 @@ body{
   background-color: black;
   width: 20px;
   height: 20px;
+  border-radius: 0;
 }
 .restart-button{
   border: none;
